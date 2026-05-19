@@ -2,7 +2,7 @@
 
 🌱 Soil Health & Fertilizer Recommendation System
 
-An intelligent Machine Learning + Flask web application that recommends the best fertilizer based on **soil nutrients, crop type, growth stage, weather conditions, and real-time climate data.
+An intelligent Machine Learning + Flask web application that recommends the best fertilizer based on soil nutrients, crop type, growth stage, weather conditions, and real-time climate data.
 
 It also provides:
 
