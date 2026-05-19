@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block title %}
+Prediction Result
+{% endblock %}
+
+{% block content %}
+
+<div class="result-body">
+
+    <div class="container py-5">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9">
+
+                <div class="result-card">
+
+                    <!-- HEADER -->
+
+                    <div class="text-center mb-5">
+
+                        <h1 class="title">
+
+                            🌱 AI Fertilizer Prediction Report
+
+                        </h1>
+
+                        <p class="subtitle">
+
+                            Smart analysis using soil nutrients,
+                            crop growth stage,
+                            and live climate conditions
+
+                        </p>
+
+                    </div>
+
+                    <!-- RESULT GRID -->
+
+                    <div class="row">
+
+                        <!-- FERTILIZER -->
+
+                        <div class="col-md-6 mb-4">
+
+                            <div class="result-box">
+
+                                <div class="result-heading">
+
+                                    Recommended Fertilizer
+
+                                </div>
+
+                                <div class="highlight">
+
+                                    {{ fertilizer }}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- SOIL HEALTH -->
+
+                        <div class="col-md-6 mb-4">
+
+                            <div class="result-box">
+
+                                <div class="result-heading">
+
+                                    Soil Health Status
+
+                                </div>
+
+                                <div class="result-value">
+
+                                    {{ soil_health }}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- COST -->
+
+                        <div class="col-md-6 mb-4">
+
+                            <div class="result-box">
+
+                                <div class="result-heading">
+
+                                    Estimated Cost
+
+                                </div>
+
+                                <div class="result-value">
+
+                                    {{ estimated_cost }}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- CITY -->
+
+                        <div class="col-md-6 mb-4">
+
+                            <div class="result-box">
+
+                                <div class="result-heading">
+
+                                    Selected City
+
+                                </div>
+
+                                <div class="result-value">
+
+                                    {{ city }}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- AI REASONING -->
+
+                    <div class="result-box mb-4">
+
+                        <div class="result-heading">
+
+                            🤖 Explainable AI Analysis
+
+                        </div>
+
+                        <div class="result-value">
+
+                            {{ reason }}
+
+                        </div>
+
+                    </div>
+
+                    <!-- CLIMATE MESSAGE -->
+
+                    <div class="result-box">
+
+                        <div class="result-heading">
+
+                            🌍 Climate Insight
+
+                        </div>
+
+                        <div class="result-value">
+
+                            {{ climate_message }}
+
+                        </div>
+
+                    </div>
+
+                    <!-- BUTTONS -->
+<div class="row mt-5 g-3">
+
+    <!-- PREDICT AGAIN -->
+
+    <div class="col-md-6">
+
+        <a
+            href="/"
+            class="btn btn-custom w-100">
+
+             Predict Again
+
+        </a>
+
+    </div>
+
+    <!-- WEATHER BUTTON -->
+
+    <div class="col-md-6">
+
+        <a
+            href="/weather?city={{ city }}"
+            class="weather-btn w-100">
+
+             View Weather Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

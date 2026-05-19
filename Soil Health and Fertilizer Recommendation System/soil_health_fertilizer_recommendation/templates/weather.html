@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}
+Weather Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="result-body">
+
+<div class="container py-5">
+
+    <!-- HEADER -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="title">
+
+            🌦 Smart Climate Dashboard
+
+        </h1>
+
+        <p class="subtitle">
+
+            Real-time agricultural weather intelligence
+            powered by live weather API
+
+        </p>
+
+    </div>
+
+    <!-- WEATHER GRID -->
+
+    <div class="row g-4">
+
+        <!-- TEMPERATURE -->
+
+        <div class="col-lg-4">
+
+            <div class="weather-card">
+
+                <div class="weather-icon">
+                    🌡
+                </div>
+
+                <div class="weather-title">
+
+                    Temperature
+
+                </div>
+
+                <div class="weather-value">
+
+                    {{ temperature }}°C
+
+                </div>
+
+                <div class="weather-desc">
+
+                    Current atmospheric temperature
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- HUMIDITY -->
+
+        <div class="col-lg-4">
+
+            <div class="weather-card">
+
+                <div class="weather-icon">
+                    💧
+                </div>
+
+                <div class="weather-title">
+
+                    Humidity
+
+                </div>
+
+                <div class="weather-value">
+
+                    {{ humidity }}%
+
+                </div>
+
+                <div class="weather-desc">
+
+                    Moisture level in air
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RAINFALL -->
+
+        <div class="col-lg-4">
+
+            <div class="weather-card">
+
+                <div class="weather-icon">
+                    🌧
+                </div>
+
+                <div class="weather-title">
+
+                    Rainfall
+
+                </div>
+
+                <div class="weather-value">
+
+                    {{ rainfall }} mm
+
+                </div>
+
+                <div class="weather-desc">
+
+                    Recent precipitation data
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CLIMATE ADVISORY -->
+
+    <div class="climate-dashboard mt-5">
+
+        <div class="climate-icon">
+
+            🤖
+
+        </div>
+
+        <div>
+
+            <h3 class="mb-3">
+
+                AI Climate Advisory
+
+            </h3>
+
+            <p class="mb-0">
+
+                {{ climate_message }}
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- CITY -->
+
+    <div class="text-center mt-4">
+
+        <div class="city-chip">
+
+            📍 {{ city }}
+
+        </div>
+
+    </div>
+
+    <!-- BUTTONS -->
+
+    <div class="d-flex gap-3 mt-5 justify-content-center flex-wrap">
+
+        <a
+            href="/"
+            class="btn btn-custom"
+        >
+
+             New Prediction
+
+        </a>
+
+        <a
+            href="javascript:history.back()"
+            class="btn weather-btn"
+        >
+
+            ← Back
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

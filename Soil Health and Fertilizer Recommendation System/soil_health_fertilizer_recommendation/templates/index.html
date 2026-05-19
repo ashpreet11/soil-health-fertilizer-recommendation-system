@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Soil AI Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="index-body">
+
+<div class="container py-5">
+
+    <div class="row align-items-center">
+
+        <!-- LEFT PANEL -->
+        <div class="col-lg-6 mb-4">
+
+            <div class="hero-panel">
+
+                <h1 class="hero-title">
+                    🌱 AI Fertilizer Advisor
+                </h1>
+
+                <p class="hero-subtitle">
+                    Predict the best fertilizer using Machine Learning, soil nutrients, crop stage, and real-time weather data.
+                    Built for smart farming decisions.
+                </p>
+
+                <div class="feature-list">
+
+                    <div class="feature-item">✔ Soil Analysis</div>
+                    <div class="feature-item">✔ Weather Intelligence</div>
+                    <div class="feature-item">✔ Crop Stage Optimization</div>
+                    <div class="feature-item">✔ Cost Prediction</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="col-lg-6">
+
+            <div class="glass-card">
+
+                <h3 class="text-center mb-3" style="font-weight:700;">
+                    Enter Soil Details
+                </h3>
+
+                <form action="/predict" method="POST">
+
+                    <!-- City -->
+                    <div class="mb-3">
+                        <label class="form-label">City</label>
+                        <select name="City" class="form-select" required>
+                            <option value="">Select City</option>
+                            {% for city in cities %}
+                            <option value="{{ city }}">{{ city }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- pH -->
+                    <div class="mb-3">
+                        <label class="form-label">Soil pH</label>
+                        <input type="number" step="any" name="Soil_pH" class="form-control" required>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Nitrogen</label>
+                            <input type="number" name="Nitrogen_Level" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Phosphorus</label>
+                            <input type="number" name="Phosphorus_Level" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Potassium</label>
+                            <input type="number" name="Potassium_Level" class="form-control" required>
+                        </div>
+
+                    </div>
+
+                    <!-- Crop -->
+                    <div class="mb-3">
+                        <label class="form-label">Crop Type</label>
+                        <select name="Crop_Type" class="form-select" required>
+                            <option value="">Select Crop</option>
+                            <option>Wheat</option>
+                            <option>Rice</option>
+                            <option>Maize</option>
+                            <option>Potato</option>
+                            <option>Sugarcane</option>
+                            <option>Cotton</option>
+                            <option>Tomato</option>
+                        </select>
+                    </div>
+
+                    <!-- Stage -->
+                    <div class="mb-3">
+                        <label class="form-label">Growth Stage</label>
+                        <select name="Crop_Growth_Stage" class="form-select" required>
+                            <option value="">Select Stage</option>
+                            <option>Sowing</option>
+                            <option>Vegetative</option>
+                            <option>Flowering</option>
+                            <option>Harvest</option>
+                        </select>
+                    </div>
+
+                    <!-- BUTTON -->
+                    <button type="submit" class="btn btn-custom w-100 mt-2">
+                         Predict Fertilizer
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}
